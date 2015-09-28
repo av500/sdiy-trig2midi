@@ -1,0 +1,4 @@
+# rule to grant read/write access on STLINK to group named usb. 
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", MODE:="0666" 
+
+
