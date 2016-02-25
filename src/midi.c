@@ -3,7 +3,7 @@
 #include "uart.h"
 
 /*
-Korg Electribe ER-1 mapping: PC = Percussion Synth
+Korg Electribe ER-1 mapping: PS = Percussion Synth
 
 PS1 (Bass Drum)		C2 	36
 PS2 (Acoustic Snare)	D2 	38
