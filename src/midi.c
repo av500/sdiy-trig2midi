@@ -104,8 +104,8 @@ static void send_byte( uint8_t c)
 void MIDI_message(int command, int note, int velocity) 
 {
 	send_byte(command | (channel & 0x0F ));
-	send_byte(note     & 0x3F);
-	send_byte(velocity & 0x3F);
+	send_byte(note     & 0x7F);
+	send_byte(velocity & 0x7F);
 }
 
 void MIDI_send( int num, int on )
