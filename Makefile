@@ -6,7 +6,7 @@ endif
 
 -include local.mk
 
-CUBEPATH = ../STM32Cube_FW_F0_V1.4.0/Drivers/
+CUBEPATH = ../STM32Cube_FW_F0_V1.7.0/Drivers/
 #CDEFS    += -DDEBUG
 CDEFS    += -DDEBUG_BAUDRATE=115200
 
