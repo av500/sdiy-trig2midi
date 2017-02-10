@@ -30,7 +30,7 @@ This project uses the HAL library for the STM32F0 series, download the package f
 
 Unpack STM32CubeF0 and edit the CUBEPATH variable at the top of the Makefile:
 
-	CUBEPATH = ../STM32Cube_FW_F0_V1.4.0/Drivers/
+	CUBEPATH = ../STM32Cube_FW_F0_V1.7.0/Drivers/
 	
 	
 3) OpenOCD
