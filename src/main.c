@@ -73,35 +73,29 @@ static void SystemClock_Config( void )
 }
 #endif
 
+static void button_init( void )
+{
+	__GPIOA_CLK_ENABLE();
+
+	// put pin to input
+	GPIO_InitTypeDef GPIO_InitStruct;
+
+	GPIO_InitStruct.Pin   = GPIO_PIN_13 | GPIO_PIN_14;
+	GPIO_InitStruct.Mode  = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull  = GPIO_PULLUP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
+
+	HAL_GPIO_Init( GPIOA, &GPIO_InitStruct );
+}
+
 static int debounce_count = 0;
 static int debounce_pin   = -1;
 #define DEBOUNCE_COUNT 5
 
 static int check_button( int *on )
 {
-	// put pin to input
-	GPIO_InitTypeDef GPIO_InitStruct;
-
-	GPIO_InitStruct.Pin   = GPIO_PIN_1;
-	GPIO_InitStruct.Mode  = GPIO_MODE_INPUT;
-	GPIO_InitStruct.Pull  = GPIO_PULLUP;
-	GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
-
-	HAL_GPIO_Init( GPIOB, &GPIO_InitStruct );
-	int pin;
-
-	// waste some time waiting for the pin to float high
-	int i;
-	for( i = 0; i < 8; i++ ) {
-		pin = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1);
-	}
-	// put pin back to output
-	GPIO_InitStruct.Pin   = GPIO_PIN_1;
-	GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
-	GPIO_InitStruct.Pull  = GPIO_NOPULL;
-	GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
-
-	HAL_GPIO_Init( GPIOB, &GPIO_InitStruct );
+	// todo: button DOWN at PA14
+	int pin = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_13);
 
 	if( pin == debounce_pin ) {
 		debounce_count ++;
@@ -134,6 +128,8 @@ dbg("\n\n[trig2midi]\n");
 	LED_init();
 	
 	MIDI_init();
+
+	button_init();
 
 	while ( 1 ) {
 		static int last;
