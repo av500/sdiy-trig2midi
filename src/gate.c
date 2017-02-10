@@ -3,14 +3,14 @@
 #include "uart.h"
 
 static uint16_t pins[GATE_NUM]  = { 
-	GPIO_PIN_0, 
-	GPIO_PIN_1, 
-	GPIO_PIN_2, 
-	GPIO_PIN_3, 
-	GPIO_PIN_4, 
-	GPIO_PIN_5, 
-	GPIO_PIN_6, 
-	GPIO_PIN_7, 
+	GPIO_PIN_3, 	// G1
+	GPIO_PIN_2, 	// G2
+	GPIO_PIN_1, 	// G3
+	GPIO_PIN_0, 	// G4
+	GPIO_PIN_10, 	// G5
+	GPIO_PIN_7, 	// G6
+	GPIO_PIN_6, 	// G7
+	GPIO_PIN_5, 	// G8
 };
 
 static GPIO_TypeDef* ports[GATE_NUM] = { 
