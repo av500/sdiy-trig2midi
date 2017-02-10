@@ -7,16 +7,16 @@
 #include <ctype.h>
 
 static uint16_t pins[LED_NUM]  = { 
-	GPIO_PIN_10, 
 	GPIO_PIN_0, 
 	GPIO_PIN_1, 
+	GPIO_PIN_4, 
 	GPIO_PIN_1, 
 };
 
 static GPIO_TypeDef *ports[LED_NUM] = { 
+	GPIOF, 
+	GPIOF, 
 	GPIOA, 
-	GPIOF, 
-	GPIOF, 
 	GPIOB, 
 };
 
