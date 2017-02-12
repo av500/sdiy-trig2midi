@@ -1,21 +1,21 @@
-PA0	trig 1
-PA1	trig 2
-PA2	trig 3
-PA3	trig 4
-PA4	trig 5
-PA5	trig 6
+PA0	trig 4
+PA1	trig 3
+PA2	trig 2
+PA3	trig 1
+PA4	LED 7
+PA5	trig 8
 PA6	trig 7
-PA7	trig 8
+PA7	trig 6
 
 PA9	UART TX	MIDI TX
-PA10	LED 5
+PA10	trig 5
 
-PA13	SWDIO
-PA14	SWDCLK
+PA13	SWDIO	S1 (UP)
+PA14	SWDCLK	S2 (DOWN)
 
-PB1	LED 8 + switch
+PB1	LED 8 
 
-F0 	LED 6
-F1	LED 7
+F0 	LED 5
+F1	LED 6
 
 
